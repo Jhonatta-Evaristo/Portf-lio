@@ -169,7 +169,7 @@ document.getElementById('whatsappForm').addEventListener('submit', function (e) 
     const ideia = document.getElementById('ideia').value;
 
     // Número do WhatsApp
-    const numeroWhatsApp = "5598987896700";
+    const numeroWhatsApp = "5598987326274";
 
     // Montar a mensagem estruturada
     const mensagem = `Olá, meu nome é *${nome}*!%0A%0A*Tenho uma ideia de projeto:*%0A${ideia}%0A%0AGostaria de tirar essa ideia do papel!`;
