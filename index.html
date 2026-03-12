@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfólio | Desenvolvedor Full Stack</title>
+    <!-- Fontes do Google: Inter para um visual moderno e clean -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <!-- FontAwesome para os ícones -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link rel="icon" type="image/svg+xml"
+        href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><path d='M50 5L93.3 30V80L50 105L6.7 80V30L50 5Z' stroke='%2300ff88' stroke-width='8' fill='black'/><path d='M35 40L25 50L35 60' stroke='white' stroke-width='10' stroke-linecap='round' stroke-linejoin='round'/><path d='M65 40L75 50L65 60' stroke='white' stroke-width='10' stroke-linecap='round' stroke-linejoin='round'/><path d='M55 35L45 65' stroke='%2300ff88' stroke-width='10' stroke-linecap='round'/></svg>">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+    <!-- Fundo Animado -->
+    <canvas id="particles"></canvas>
+
+    <!-- 1️⃣ Seção Hero (Apresentação) -->
+    <section class="hero reveal">
+        <div class="container hero-content">
+            <div class="hero-img-container">
+                <!-- Foto com espaço reservado. Substitua o link pelo caminho da sua foto -->
+                <img src="img/yo.jpeg" alt="Foto do Desenvolvedor" class="hero-img">
+            </div>
+
+            <h1 class="hero-name">Jhonatta Evaristo</h1>
+            <h2 class="hero-title">Desenvolvedor Full Stack</h2>
+
+            <div class="hero-techs">
+                HTML &bull; CSS &bull; JavaScript &bull; Node.js &bull; MySQL
+            </div>
+
+            <p class="hero-text">
+                Especialista em criar soluções digitais inovadoras, de alta performance e com design excepcional.
+                Transformando ideias em linhas de código.
+            </p>
+
+            <div class="social-buttons">
+                <a href="https://www.instagram.com/jhonatta_evaristo/" target="_blank" class="btn-social">
+                    <i class="fab fa-instagram"></i> Instagram
+                </a>
+
+                <a href="https://www.linkedin.com/in/jhonatta-evaristo-84373322a/" target="_blank" class="btn-social">
+                    <i class="fab fa-linkedin-in"></i> LinkedIn
+                </a>
+
+                <a href="https://github.com/Jhonatta-Evaristo" target="_blank" class="btn-social">
+                    <i class="fab fa-github"></i> GitHub
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- 2️⃣ Seção Sobre Mim -->
+    <section class="sobre" id="sobre">
+        <div class="container reveal">
+            <h2 class="section-title">Sobre Mim</h2>
+            <div class="sobre-content">
+                <p>
+                    Olá, eu sou um <span class="highlight">Desenvolvedor Full Stack</span> apaixonado por tecnologia e
+                    inovação. Desde o meu primeiro contato com programação, fiquei fascinado com a capacidade de
+                    construir sistemas completos a partir do zero.
+                </p>
+                <p>
+                    Tenho sólida experiência em desenvolvimento web, atuando tanto no <span
+                        class="highlight">Front-end</span> criando interfaces intuitivas e dinâmicas, quanto no <span
+                        class="highlight">Back-end</span> arquitetando bancos de dados seguros e APIs robustas.
+                </p>
+                <p>
+                    Meu foco principal é a <span class="highlight">criação de soluções digitais</span> que não apenas
+                    resolvam problemas complexos, mas que também entreguem a melhor experiência possível para o usuário
+                    final. Sempre buscando aprender as tecnologias mais recentes do mercado.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- 3️⃣ Seção de Competências -->
+    <section class="competencias" id="competencias">
+        <div class="container reveal">
+            <h2 class="section-title">Competências</h2>
+            <div class="skills-grid">
+
+                <div class="skill-card">
+                    <i class="fab fa-html5 skill-icon"></i>
+                    <div class="skill-name">HTML5</div>
+                </div>
+
+                <div class="skill-card">
+                    <i class="fab fa-css3-alt skill-icon"></i>
+                    <div class="skill-name">CSS3</div>
+                </div>
+
+                <div class="skill-card">
+                    <i class="fab fa-js skill-icon"></i>
+                    <div class="skill-name">JavaScript</div>
+                </div>
+
+                <div class="skill-card">
+                    <i class="fab fa-node-js skill-icon"></i>
+                    <div class="skill-name">Node.js</div>
+                </div>
+
+                <div class="skill-card">
+                    <i class="fas fa-database skill-icon"></i>
+                    <div class="skill-name">MySQL</div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- 4️⃣ & 5️⃣ Seção de Projetos e Carrossel -->
+    <section class="projetos" id="projetos">
+        <div class="container reveal">
+            <h2 class="section-title">Projetos</h2>
+
+            <div class="carousel-wrapper">
+                <button class="carousel-btn prev" id="prevBtn"><i class="fas fa-chevron-left"></i></button>
+
+                <div class="carousel-viewport">
+                    <div class="carousel-track" id="carouselTrack">
+
+                        <!-- Projeto 1 -->
+                        <div class="project-card">
+                            <div class="project-img-wrapper">
+                                <img src="img/pizzaria.png" alt="Dashboard Admin" class="project-img">
+                            </div>
+                            <div class="project-info">
+                                <h3 class="project-title">Pizzaria La Bella</h3>
+                                <p class="project-desc">Site desenvolvido para uma pizzaria com páginas institucionais,
+                                    cardápio e sistema de pedidos para delivery. O projeto foi criado com foco em
+                                    responsividade e experiência do usuário.</p>
+                                <div class="project-techs">
+                                    <span class="tech-badge">HTML5</span>
+                                    <span class="tech-badge">CSS3</span>
+                                    <span class="tech-badge">JavaScript</span>
+                                </div>
+                                <a href="https://pizzaria-la-bella.vercel.app/" target="_blank" class="btn-project">
+                                    Ver Projeto
+                                </a>
+                                <p class="project-caption">Interface web responsiva desenvolvida com foco em
+                                    usabilidade, navegação intuitiva e experiência do usuário.</p>
+                            </div>
+                        </div>
+
+                        <!-- Projeto 2 -->
+                        <div class="project-card">
+                            <div class="project-img-wrapper">
+                                <img src="img/academia.png" alt="E-commerce" class="project-img">
+                            </div>
+                            <div class="project-info">
+                                <h3 class="project-title">IronForge</h3>
+                                <p class="project-desc">Website desenvolvido para academia com foco na apresentação de
+                                    serviços, estrutura do espaço e incentivo à prática de atividades físicas.</p>
+                                <div class="project-techs">
+                                    <span class="tech-badge">HTML5</span>
+                                    <span class="tech-badge">CSS3</span>
+                                    <span class="tech-badge">JavaScript</span>
+                                </div>
+                                <a href="https://site-intitucional-iron-forge.vercel.app/" target="_blank"
+                                    class="btn-project">
+                                    Ver Projeto
+                                </a>
+                                <p class="project-caption">Interface moderna com foco na apresentação visual e na
+                                    experiência do usuário.</p>
+                            </div>
+                        </div>
+
+                        <!-- Projeto 3 -->
+                        <div class="project-card">
+                            <div class="project-img-wrapper">
+                                <img src="img/barbearia.png" alt="App de Tarefas" class="project-img">
+                            </div>
+                            <div class="project-info">
+                                <h3 class="project-title">Elegance</h3>
+                                <p class="project-desc">Aplicação web para gerenciamento de tarefas e produtividade com
+                                    sistema de autenticação.</p>
+                                <div class="project-techs">
+                                    <span class="tech-badge">HTML5</span>
+                                    <span class="tech-badge">TailwindCSS</span>
+                                    <span class="tech-badge">JavaScript</span>
+                                </div>
+                                <a href="https://landing-page-barbearia-psi.vercel.app/" target="_blank"
+                                    class="btn-project">
+                                    Ver Projeto
+                                </a>
+                                <p class="project-caption">Design sofisticado e experiência fluida para representar uma
+                                    barbearia moderna no ambiente digital.</p>
+                            </div>
+                        </div>
+
+                        <!-- Projeto 4 -->
+                        <div class="project-card">
+                            <div class="project-img-wrapper">
+                                <img src="img/clinica.png" alt="App Financeiro" class="project-img">
+                            </div>
+                            <div class="project-info">
+                                <h3 class="project-title">Clínica Sorriso Perfeito</h3>
+                                <p class="project-desc">Site institucional desenvolvido para a clínica odontológica
+                                    Sorriso Perfeito, com o objetivo de apresentar tratamentos, fortalecer a presença
+                                    digital da clínica e facilitar o contato com novos pacientes.</p>
+                                <div class="project-techs">
+                                    <span class="tech-badge">HTML5</span>
+                                    <span class="tech-badge">TailwindCSS</span>
+                                    <span class="tech-badge">JavaScript</span>
+                                </div>
+                                <a href="https://sorriso-perfeito-iota.vercel.app/" target="_blank" class="btn-project">
+                                    Ver Projeto
+                                </a>
+                                <p class="project-caption">Interface moderna com foco na apresentação dos serviços e na
+                                    experiência do usuário.</p>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+                <button class="carousel-btn next" id="nextBtn"><i class="fas fa-chevron-right"></i></button>
+            </div>
+        </div>
+    </section>
+
+    <!-- 6️⃣ Seção de Contato -->
+    <section class="contato" id="contato">
+        <div class="container reveal">
+            <h2 class="section-title">Vamos tirar sua ideia do papel</h2>
+
+            <form class="contact-form" id="whatsappForm">
+                <div class="form-group">
+                    <label for="nome">Seu Nome</label>
+                    <input type="text" id="nome" placeholder="Digite seu nome completo" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="ideia">Ideia do Projeto</label>
+                    <textarea id="ideia" placeholder="Descreva brevemente o que você tem em mente..."
+                        required></textarea>
+                </div>
+
+                <button type="submit" class="btn-submit">
+                    <i class="fab fa-whatsapp"></i> Enviar Mensagem
+                </button>
+            </form>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2026 Jhonatta Evaristo. Todos os direitos reservados.</p>
+    </footer>
+
+    <script src="js/script.js"></script>
+</body>
+
+</html>

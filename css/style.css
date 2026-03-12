@@ -1,0 +1,611 @@
+        :root {
+            --bg-color: #0a0a0a;
+            --section-bg: #141414;
+            --neon-green: #00ff88;
+            --neon-green-dim: rgba(0, 255, 136, 0.2);
+            --text-white: #ffffff;
+            --text-gray: #a0a0a0;
+            --font-main: 'Inter', sans-serif;
+            --transition: all 0.3s ease;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: var(--font-main);
+            background-color: var(--bg-color);
+            color: var(--text-white);
+            overflow-x: hidden;
+            line-height: 1.6;
+        }
+
+        /* Fundo Animado via Canvas */
+        #particles {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            z-index: -1;
+            background: linear-gradient(to bottom, #0a0a0a, #050505);
+        }
+
+        /* Layout Container */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 80px 20px;
+        }
+
+        h2.section-title {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 50px;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            position: relative;
+            display: inline-block;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        h2.section-title::after {
+            content: '';
+            position: absolute;
+            width: 50%;
+            height: 3px;
+            background-color: var(--neon-green);
+            bottom: -10px;
+            left: 25%;
+            box-shadow: 0 0 10px var(--neon-green);
+            border-radius: 5px;
+        }
+
+        /* Animações de Scroll (Fade In e Slide Up) */
+        .reveal {
+            opacity: 0;
+            transform: translateY(40px);
+            transition: all 0.8s ease-out;
+        }
+
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* ==========================================================
+           SEÇÃO 1: HERO (APRESENTAÇÃO)
+           ========================================================== */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding-top: 50px;
+        }
+
+        .hero-content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 20px;
+            max-width: 800px;
+        }
+
+        .hero-img-container {
+            position: relative;
+            width: 180px;
+            height: 180px;
+            border-radius: 50%;
+            padding: 5px;
+            background: linear-gradient(45deg, var(--bg-color), var(--neon-green));
+            box-shadow: 0 0 25px var(--neon-green-dim);
+            animation: pulseGlow 3s infinite alternate;
+        }
+
+        @keyframes pulseGlow {
+            0% {
+                box-shadow: 0 0 20px var(--neon-green-dim);
+            }
+
+            100% {
+                box-shadow: 0 0 40px var(--neon-green);
+            }
+        }
+
+        .hero-img {
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 4px solid var(--bg-color);
+        }
+
+        .hero-name {
+            font-size: 3.5rem;
+            font-weight: 800;
+            letter-spacing: -1px;
+            margin-top: 10px;
+        }
+
+        .hero-title {
+            color: var(--neon-green);
+            font-size: 1.5rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            text-shadow: 0 0 10px var(--neon-green-dim);
+        }
+
+        .hero-techs {
+            font-size: 1.1rem;
+            color: var(--text-gray);
+            font-weight: 300;
+            word-spacing: 5px;
+        }
+
+        .hero-text {
+            color: var(--text-gray);
+            max-width: 600px;
+            font-size: 1.1rem;
+            margin: 10px 0 20px 0;
+        }
+
+        .social-buttons {
+            display: flex;
+            gap: 20px;
+            margin-top: 15px;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .btn-social {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            padding: 12px 25px;
+            background: transparent;
+            color: var(--text-white);
+            border: 1px solid var(--text-gray);
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: var(--transition);
+            cursor: pointer;
+        }
+
+        .btn-social i {
+            font-size: 1.2rem;
+        }
+
+        .btn-social:hover {
+            border-color: var(--neon-green);
+            color: var(--bg-color);
+            background-color: var(--neon-green);
+            box-shadow: 0 0 20px var(--neon-green);
+            transform: translateY(-3px);
+        }
+
+        /* ==========================================================
+           SEÇÃO 2: SOBRE MIM
+           ========================================================== */
+        .sobre {
+            background-color: rgba(20, 20, 20, 0.7);
+            backdrop-filter: blur(10px);
+            border-top: 1px solid rgba(0, 255, 136, 0.1);
+            border-bottom: 1px solid rgba(0, 255, 136, 0.1);
+        }
+
+        .sobre-content {
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto;
+            color: var(--text-gray);
+            font-size: 1.15rem;
+            line-height: 1.8;
+        }
+
+        .sobre-content p {
+            margin-bottom: 20px;
+        }
+
+        .highlight {
+            color: var(--neon-green);
+            font-weight: 600;
+        }
+
+        /* ==========================================================
+           SEÇÃO 3: COMPETÊNCIAS
+           ========================================================== */
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 25px;
+            margin-top: 40px;
+        }
+
+        .skill-card {
+            background-color: var(--section-bg);
+            border: 1px solid #222;
+            padding: 30px 20px;
+            border-radius: 12px;
+            text-align: center;
+            transition: var(--transition);
+            cursor: default;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .skill-card::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, var(--neon-green-dim) 0%, transparent 60%);
+            opacity: 0;
+            transition: var(--transition);
+            transform: scale(0.5);
+            pointer-events: none;
+        }
+
+        .skill-card:hover {
+            border-color: var(--neon-green);
+            box-shadow: 0 10px 30px rgba(0, 255, 136, 0.15);
+            transform: translateY(-5px);
+        }
+
+        .skill-card:hover::before {
+            opacity: 1;
+            transform: scale(1);
+        }
+
+        .skill-icon {
+            font-size: 3.5rem;
+            color: var(--text-white);
+            margin-bottom: 15px;
+            transition: var(--transition);
+            position: relative;
+            z-index: 1;
+        }
+
+        .skill-card:hover .skill-icon {
+            color: var(--neon-green);
+            text-shadow: 0 0 15px var(--neon-green);
+        }
+
+        .skill-name {
+            font-weight: 600;
+            font-size: 1.2rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        /* ==========================================================
+           SEÇÃO 4 & 5: PROJETOS E CARROSSEL
+           ========================================================== */
+        .projetos {
+            background-color: rgba(10, 10, 10, 0.8);
+        }
+
+        .carousel-wrapper {
+            position: relative;
+            width: 100%;
+            padding: 0 50px;
+            /* Espaço para as setas */
+            margin-top: 40px;
+        }
+
+        .carousel-viewport {
+            overflow: hidden;
+            border-radius: 15px;
+            padding: 20px 0;
+        }
+
+        .carousel-track {
+            display: flex;
+            gap: 30px;
+            transition: transform 0.5s cubic-bezier(0.25, 1, 0.5, 1);
+        }
+
+        .project-card {
+            min-width: calc(33.333% - 20px);
+            background-color: var(--section-bg);
+            border-radius: 15px;
+            border: 1px solid #222;
+            overflow: hidden;
+            transition: var(--transition);
+            display: flex;
+            flex-direction: column;
+        }
+
+        .project-card:hover {
+            border-color: var(--neon-green);
+            box-shadow: 0 10px 25px rgba(0, 255, 136, 0.2);
+            transform: translateY(-10px);
+        }
+
+        .project-img-wrapper {
+            width: 100%;
+            height: 200px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .project-img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.6s ease;
+        }
+
+        .project-card:hover .project-img {
+            transform: scale(1.1);
+        }
+
+        .project-info {
+            padding: 25px;
+            display: flex;
+            flex-direction: column;
+            flex-grow: 1;
+        }
+
+        .project-title {
+            font-size: 1.4rem;
+            margin-bottom: 10px;
+            color: var(--text-white);
+        }
+
+        .project-desc {
+            color: var(--text-gray);
+            font-size: 0.95rem;
+            margin-bottom: 20px;
+            flex-grow: 1;
+        }
+
+        .project-techs {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-bottom: 25px;
+        }
+
+        .tech-badge {
+            background-color: #222;
+            color: var(--neon-green);
+            padding: 4px 10px;
+            border-radius: 20px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            border: 1px solid rgba(0, 255, 136, 0.3);
+        }
+
+        .btn-project {
+            text-align: center;
+            padding: 12px;
+            background-color: transparent;
+            color: var(--neon-green);
+            border: 1px solid var(--neon-green);
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: var(--transition);
+            display: block;
+        }
+
+        .btn-project:hover {
+            background-color: var(--neon-green);
+            color: var(--bg-color);
+            box-shadow: 0 0 15px var(--neon-green);
+        }
+
+        .project-caption {
+            text-align: center;
+            font-size: 0.85rem;
+            color: var(--text-gray);
+            margin-top: 15px;
+            font-style: italic;
+        }
+
+        /* Botões do Carrossel */
+        .carousel-btn {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background: var(--section-bg);
+            border: 1px solid var(--neon-green);
+            color: var(--neon-green);
+            width: 45px;
+            height: 45px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            z-index: 10;
+            transition: var(--transition);
+            font-size: 1.2rem;
+        }
+
+        .carousel-btn:hover {
+            background: var(--neon-green);
+            color: var(--bg-color);
+            box-shadow: 0 0 15px var(--neon-green);
+        }
+
+        .carousel-btn.prev {
+            left: 0;
+        }
+
+        .carousel-btn.next {
+            right: 0;
+        }
+
+        /* ==========================================================
+           SEÇÃO 6: CONTATO (Formulário WhatsApp)
+           ========================================================== */
+        .contato {
+            background-color: var(--section-bg);
+            border-top: 1px solid #222;
+        }
+
+        .contact-form {
+            max-width: 600px;
+            margin: 0 auto;
+            background-color: #0a0a0a;
+            padding: 40px;
+            border-radius: 15px;
+            border: 1px solid #222;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.5);
+            position: relative;
+        }
+
+        .contact-form::before {
+            content: '';
+            position: absolute;
+            top: -2px;
+            left: -2px;
+            right: -2px;
+            bottom: -2px;
+            background: linear-gradient(45deg, transparent, var(--neon-green), transparent);
+            z-index: -1;
+            border-radius: 17px;
+            opacity: 0.3;
+        }
+
+        .form-group {
+            margin-bottom: 25px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            color: var(--text-gray);
+            font-weight: 600;
+        }
+
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 15px;
+            background-color: #141414;
+            border: 1px solid #333;
+            border-radius: 8px;
+            color: var(--text-white);
+            font-family: var(--font-main);
+            font-size: 1rem;
+            transition: var(--transition);
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: var(--neon-green);
+            box-shadow: 0 0 10px rgba(0, 255, 136, 0.2);
+        }
+
+        .form-group textarea {
+            resize: vertical;
+            min-height: 120px;
+        }
+
+        .btn-submit {
+            width: 100%;
+            padding: 15px;
+            background-color: var(--neon-green);
+            color: var(--bg-color);
+            border: none;
+            border-radius: 8px;
+            font-size: 1.1rem;
+            font-weight: 800;
+            cursor: pointer;
+            transition: var(--transition);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+        }
+
+        .btn-submit:hover {
+            box-shadow: 0 0 20px var(--neon-green);
+            transform: translateY(-2px);
+        }
+
+        footer {
+            text-align: center;
+            padding: 30px 20px;
+            border-top: 1px solid #222;
+            color: var(--text-gray);
+            font-size: 0.9rem;
+        }
+
+        /* ==========================================================
+           RESPONSIVIDADE (Celular, Tablet, Computador)
+           ========================================================== */
+        @media (max-width: 992px) {
+            .project-card {
+                min-width: calc(50% - 15px);
+            }
+
+            .hero-name {
+                font-size: 2.8rem;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .hero-img-container {
+                width: 150px;
+                height: 150px;
+            }
+
+            .hero-name {
+                font-size: 2.2rem;
+            }
+
+            .hero-title {
+                font-size: 1.2rem;
+            }
+
+            .project-card {
+                min-width: 100%;
+            }
+
+            .carousel-wrapper {
+                padding: 0 40px;
+            }
+
+            .contact-form {
+                padding: 25px;
+            }
+
+            h2.section-title {
+                font-size: 2rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .btn-social {
+                width: 100%;
+                justify-content: center;
+            }
+
+            .carousel-btn {
+                width: 35px;
+                height: 35px;
+            }
+
+            .carousel-wrapper {
+                padding: 0 30px;
+            }
+        }
+
+        .hidden {
+            display: none;
+        }
